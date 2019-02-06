@@ -1,11 +1,16 @@
-<p>
-  shopping works!
-</p>
 <div class="row">
-  <div class="col-md-12">
-    <app-shopping-edit></app-shopping-edit>
+  <div class="col-xs-10">
+    <app-shopping-edit 
+    (ingredientAdded)="onIngredientAdded($event)"
+    ></app-shopping-edit>
     <hr>
-    <p>The Shopping List: </p>
+    <ul class="list-group">
+      <a class="list-group-item" style="cursor: pointer"
+      *ngFor="let ingredient of ingredients">
+      {{ingredient.name}} 
+      ({{ingredient.amount}})
+    </a>
+    </ul>
 
   </div>
 </div>
